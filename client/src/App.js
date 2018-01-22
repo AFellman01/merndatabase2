@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 import Submit from './scholarshipsubmit.js';
-import ScholarshipData from "./ScholarshipData"
+import ScholarshipData from "./ScholarshipData";
+import scholarships from './img/scholarships.jpg';
+
+const imgStyle = {
+  position: 'absolute',
+  backgroundSize: '100% 100vh',
+  maxWidth:'100%',
+  maxHeight:'100%',
+  width:'100%',
+  height:'100%',
+  backgroundImage: `url(${scholarships})`,
+
+}
+
 export default class App extends Component {
   constructor(){
     super();
@@ -25,17 +37,14 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <div style={imgStyle}>
         <div className="App-intro">
         <Submit getData={this.getData}/>
         <br/>
         <ScholarshipData data={this.state.data}/>
         </div>
       </div>
+
     );
   }
 }

@@ -1,9 +1,19 @@
 import React from 'react';
 
+
+const Datastyle = {
+fontSize: "20px",
+margin: "50px",
+
+
+
+}
+
 export default class ScholarshipData extends React.Component {
   render(){
     return(
-      <ul>
+      <ol>
+        <div style={Datastyle}>
       {
         this.props.data.map((item)=>{
           return (
@@ -13,11 +23,14 @@ export default class ScholarshipData extends React.Component {
             <p>The Amount Being Offered: {item.amount}</p>
             <p>When Submissions are Due: {item.due_date}</p>
             <p>The Website: {item.url}</p>
+            <br />
           </li>
         );
+
         })
       }
-      </ul>
+      </div>
+    </ol>
     )
   }
 };
