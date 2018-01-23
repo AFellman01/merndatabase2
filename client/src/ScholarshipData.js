@@ -3,7 +3,8 @@ import React from 'react';
 
 const Datastyle = {
 fontSize: "20px",
-margin: "50px",
+margin: "30px",
+fontFamily:'Quicksand'
 
 
 
@@ -14,6 +15,7 @@ export default class ScholarshipData extends React.Component {
     return(
       <ol>
         <div style={Datastyle}>
+        <h2>View Scholarships:</h2>
       {
         this.props.data.map((item)=>{
           return (
